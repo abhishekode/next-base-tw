@@ -62,7 +62,7 @@ const Header = () => {
           <div className="lg:hidden absolute top-4 right-4">
             <button
               onClick={toggleMobileMenu}
-              className="text-gray-950 focus:outline-none"
+              className={`${isScrolled? 'text-gray-50': 'text-gray-950'}text-gray-950 focus:outline-none`}
             >
               <svg
                 className="h-6 w-6"
