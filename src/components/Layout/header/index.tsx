@@ -1,14 +1,11 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { deleteCookie } from "cookies-next";
 import { ModeToggle } from "../Theme";
-import { useGlobalUser } from "@/components/context/UserContext";
 import { LogOutIcon } from 'lucide-react'
+
 const Header = () => {
-  const { user, setUser } = useGlobalUser();
-  const pathname = usePathname();
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -31,23 +28,12 @@ const Header = () => {
   const navLinks = [
     { id: 1, name: "Home", path: "/" },
     { id: 2, name: "About", path: "/about" },
-    ...(user
-      ? user.role === "student"
-        ? [{ id: 6, name: "Student", path: "/student" }]
-        : user.role === "admin"
-          ? [{ id: 4, name: "Admin", path: "/admin" }]
-          : []
-      : []),
   ];
 
   const handleLogout = () => {
     deleteCookie("user");
-    setUser(null);
   };
 
-  if (pathname.match(/^\/admin(\/.*)?$/)) {
-    return null;
-  }
 
   return (
     <div className={`${isScrolled ? "bg-slate-950 text-gray-50 sticky top-0" : "bg-slate-50 text-gray-950"} z-50 shadow-md border-b`}>

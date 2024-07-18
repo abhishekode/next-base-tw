@@ -1,13 +1,13 @@
 export const homeMetaData = {
-    title: "Expense Tracker",
+    title: "Home Page",
     description: "!",
-    keywords: "Crystal Pathshala, Spoken English, Public Speaking, Personality Development, Professional English, Corporate Training, Noida, Delhi NCR, skills training",
+    keywords: "",
     openGraph: {
         title: "",
         description: "",
         type: "website",
-        url: "https://crystalpathshala.com/",
-        images: "https://crystalpathshala.com/images/rahul-p-dev.png",
+        url: "https://website.com/",
+        images: "https://website.com/images/img.png",
     },
     twitter: {
         site: "twitter",
